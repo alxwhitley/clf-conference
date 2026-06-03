@@ -11,17 +11,17 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/pastors")({
   head: () => ({
     meta: [
-      { title: "Pastors Corner — New Wave Conference" },
+      { title: "Pastors Corner — The Way Conference" },
       {
         name: "description",
         content:
-          "A track for senior leaders and pastors who care about the next generation. Running alongside New Wave 2025.",
+          "A track for senior leaders and pastors who care about the next generation. Running alongside The Way 2025.",
       },
-      { property: "og:title", content: "Pastors Corner — New Wave Conference" },
+      { property: "og:title", content: "Pastors Corner — The Way Conference" },
       {
         property: "og:description",
         content:
-          "A leaders track for senior pastors running alongside New Wave 2025 in Raleigh, NC.",
+          "A leaders track for senior pastors running alongside The Way 2025 in Raleigh, NC.",
       },
     ],
   }),
@@ -34,7 +34,7 @@ function PastorsPage() {
       <PageHero
         eyebrow="For Senior Leaders & Pastors"
         title="PASTORS CORNER"
-        subtitle="A track running alongside New Wave for the leaders who shape the rooms young adults walk into."
+        subtitle="A track running alongside The Way for the leaders who shape the rooms young adults walk into."
       />
 
       {/* Vision */}

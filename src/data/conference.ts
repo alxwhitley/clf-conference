@@ -24,7 +24,7 @@ export const speakers: Speaker[] = [
     id: "jeremiah-cole",
     name: "Jeremiah Cole",
     ministry: "Pastor — CLF Church",
-    bio: "Jeremiah pastors at CLF in Raleigh and oversees the New Wave gathering. He carries a heart to see young adults in the South awakened to real, ordinary life with God.",
+    bio: "Jeremiah pastors at CLF in Raleigh and oversees the The Way gathering. He carries a heart to see young adults in the South awakened to real, ordinary life with God.",
   },
   {
     id: "alana-fields",

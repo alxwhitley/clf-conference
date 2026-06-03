@@ -11,17 +11,17 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "New Wave — A Young Adults Gathering | Oct 17–19, Raleigh NC" },
+      { title: "The Way — A Young Adults Gathering | Oct 17–19, Raleigh NC" },
       {
         name: "description",
         content:
           "Bringing the Next Generation into Restore. Oct 17–19, 2025 in Raleigh, NC.",
       },
-      { property: "og:title", content: "New Wave — A Young Adults Gathering" },
+      { property: "og:title", content: "The Way — A Young Adults Gathering" },
       {
         property: "og:description",
         content:
-          "THREE DAYS. ONE DESIRE. New Wave is a young adults conference in Raleigh, NC. October 17–19, 2025.",
+          "THREE DAYS. ONE DESIRE. The Way is a young adults conference in Raleigh, NC. October 17–19, 2025.",
       },
     ],
   }),
@@ -38,7 +38,7 @@ function Home() {
       <section className="bg-cream py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-12">
           <div>
-            <Eyebrow>What Is New Wave</Eyebrow>
+            <Eyebrow>What Is The Way</Eyebrow>
           </div>
           <div>
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
@@ -46,10 +46,7 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                We're not gathering to sit through talks. And we're not a gathering of a bunch of young people. The heart of New Wave is that an effective move of God to reach this generation requires the older and younger working together.
-              </p>
-              <p>
-                Three days of worship, teaching, and honest conversation that will help an emerging generation carry on the mission and not miss what God is doing in this hour. 
+                We live in a moment where a generation is losing the thread of who they are. Institutions are failing. Trust is breaking down. And in the middle of the noise, people are searching. The Way is a three-day gathering designed to cut through it — restoring a generation to their identity so they can step boldly into their purpose.
               </p>
             </div>
 
@@ -63,6 +60,46 @@ function Home() {
                 <div className="eyebrow !text-text-muted mt-2">The Generation</div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Way — four steps */}
+      <section className="bg-cream py-24 md:py-32 border-t border-border">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-10">
+          <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-12 md:mb-16">
+            <div>
+              <Eyebrow>The Journey</Eyebrow>
+            </div>
+            <div>
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
+                THE WAY
+              </h2>
+              <p className="mt-6 max-w-xl text-base md:text-lg text-dark/70 leading-relaxed">
+                A journey back to who you were made to be.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
+            {[
+              { n: "01", title: "Deliverance", body: "Breaking free of the powers of darkness." },
+              { n: "02", title: "Transformation", body: "Not behavior modification — but a path forward that changes you from the inside out." },
+              { n: "03", title: "Rulership", body: "You were made to reign and rule in every area of life." },
+              { n: "04", title: "Mission", body: "Advancing the gospel of the Kingdom into the world." },
+            ].map((step) => (
+              <div key={step.n} className="border-t border-dark/20 pt-5">
+                <div className="font-display text-5xl md:text-6xl tracking-wider text-gold leading-none">
+                  {step.n}
+                </div>
+                <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-4">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm md:text-base text-dark/70 leading-relaxed">
+                  {step.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

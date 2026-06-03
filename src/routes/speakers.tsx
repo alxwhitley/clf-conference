@@ -6,17 +6,17 @@ import { speakers } from "@/data/conference";
 export const Route = createFileRoute("/speakers")({
   head: () => ({
     meta: [
-      { title: "Speakers — New Wave Conference" },
+      { title: "Speakers — The Way Conference" },
       {
         name: "description",
         content:
-          "The voices teaching at New Wave 2025. Pastors, authors, and worship leaders carrying a heart for the next generation.",
+          "The voices teaching at The Way 2025. Pastors, authors, and worship leaders carrying a heart for the next generation.",
       },
-      { property: "og:title", content: "Speakers — New Wave Conference" },
+      { property: "og:title", content: "Speakers — The Way Conference" },
       {
         property: "og:description",
         content:
-          "Meet the pastors, authors, and worship leaders teaching at New Wave 2025 in Raleigh, NC.",
+          "Meet the pastors, authors, and worship leaders teaching at The Way 2025 in Raleigh, NC.",
       },
     ],
   }),
