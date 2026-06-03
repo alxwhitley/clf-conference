@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "God is doing a new thing and moving in a young generation. New Wave is a multi-generational gathering where we encounter God together, get equipped for the moment, and step in what God is doing next. Oct 17–19, 2025 in Raleigh, NC.",
+          "Bringing the Next Generation into Restore. Oct 17–19, 2025 in Raleigh, NC.",
       },
       { property: "og:title", content: "New Wave — A Young Adults Gathering" },
       {
