@@ -32,8 +32,8 @@ export function Hero() {
         <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[160px] mt-6 leading-[0.85]">
           THE<br />WAY
         </h1>
-        <p className="mt-8 max-w-md text-base md:text-lg text-cream/70 leading-relaxed">
-          Restoring a generation to their identity so they can step boldly into their purpose.
+        <p className="mt-8 max-w-md text-base md:text-lg text-cream/70 leading-relaxed whitespace-pre-line">
+          A three-day conference for young adults ages 18–30.{"\n\n\n"}Restoring a generation to their identity so they can step boldly into their purpose.
         </p>
         <div className="flex flex-wrap gap-3 mt-10">
           <SiteLinkButton variant="primary" href="#register">
