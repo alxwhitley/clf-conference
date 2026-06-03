@@ -11,17 +11,17 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "New Wave — A Young Adults Gathering | Oct 17–19, Raleigh NC" },
+      { title: "The Way — A Young Adults Gathering | Oct 17–19, Raleigh NC" },
       {
         name: "description",
         content:
           "Bringing the Next Generation into Restore. Oct 17–19, 2025 in Raleigh, NC.",
       },
-      { property: "og:title", content: "New Wave — A Young Adults Gathering" },
+      { property: "og:title", content: "The Way — A Young Adults Gathering" },
       {
         property: "og:description",
         content:
-          "THREE DAYS. ONE DESIRE. New Wave is a young adults conference in Raleigh, NC. October 17–19, 2025.",
+          "THREE DAYS. ONE DESIRE. The Way is a young adults conference in Raleigh, NC. October 17–19, 2025.",
       },
     ],
   }),
@@ -38,7 +38,7 @@ function Home() {
       <section className="bg-cream py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-12">
           <div>
-            <Eyebrow>What Is New Wave</Eyebrow>
+            <Eyebrow>What Is The Way</Eyebrow>
           </div>
           <div>
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
@@ -46,7 +46,7 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                We're not gathering to sit through talks. And we're not a gathering of a bunch of young people. The heart of New Wave is that an effective move of God to reach this generation requires the older and younger working together.
+                We're not gathering to sit through talks. And we're not a gathering of a bunch of young people. The heart of The Way is that an effective move of God to reach this generation requires the older and younger working together.
               </p>
               <p>
                 Three days of worship, teaching, and honest conversation that will help an emerging generation carry on the mission and not miss what God is doing in this hour. 

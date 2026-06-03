@@ -9,17 +9,17 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/schedule")({
   head: () => ({
     meta: [
-      { title: "Schedule — New Wave Conference" },
+      { title: "Schedule — The Way Conference" },
       {
         name: "description",
         content:
-          "Three days of worship, teaching, and breakouts. The full New Wave schedule for Oct 17–19, 2025 in Raleigh, NC.",
+          "Three days of worship, teaching, and breakouts. The full The Way schedule for Oct 17–19, 2025 in Raleigh, NC.",
       },
-      { property: "og:title", content: "Schedule — New Wave Conference" },
+      { property: "og:title", content: "Schedule — The Way Conference" },
       {
         property: "og:description",
         content:
-          "The full New Wave schedule — Friday night through Sunday morning. Main sessions and breakouts.",
+          "The full The Way schedule — Friday night through Sunday morning. Main sessions and breakouts.",
       },
     ],
   }),

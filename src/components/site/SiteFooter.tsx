@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <div className="font-display text-4xl md:text-5xl tracking-wider">NEW WAVE</div>
+            <div className="font-display text-4xl md:text-5xl tracking-wider">THE WAY</div>
             <p className="mt-4 text-sm text-cream/60 max-w-sm leading-relaxed">
               A young adults gathering. Raleigh, NC. October 17–19, 2025.
             </p>
@@ -43,7 +43,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-cream/40">
-          <div>© 2025 New Wave Conference. A gathering of CLF Church.</div>
+          <div>© 2025 The Way Conference. A gathering of CLF Church.</div>
           <div>Made with intention in Raleigh.</div>
         </div>
       </div>
