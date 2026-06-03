@@ -15,13 +15,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A gathering for young adults hungry for something real. Three days. One generation. No hype. Oct 17–19, 2025 in Raleigh, NC.",
+          "God is doing a new thing and moving in a young generation. New Wave is a multi-generational gathering where we encounter God together, get equipped for the moment, and step in what God is doing next. Oct 17–19, 2025 in Raleigh, NC.",
       },
       { property: "og:title", content: "New Wave — A Young Adults Gathering" },
       {
         property: "og:description",
         content:
-          "Three days. One generation. No hype. New Wave is a young adults conference in Raleigh, NC. October 17–19, 2025.",
+          "THREE DAYS. ONE DESIRE. New Wave is a young adults conference in Raleigh, NC. October 17–19, 2025.",
       },
     ],
   }),
@@ -46,16 +46,16 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                We're not gathering to sit through talks. New Wave exists because this generation is hungry — for presence, for purpose, for something that actually changes them. Come expecting God to move.
+                We're not gathering to sit through talks. And we're not a gathering of a bunch of young people. The heart of New Wave is that an effective move of God to reach this generation requires the older and younger working together.
               </p>
               <p>
-                Three days of worship, teaching, and honest conversation. No filler. No performance. Just a room full of young adults who actually want to encounter Jesus.
+                Three days of worship, teaching, and honest conversation that will help an emerging generation carry on the mission and not miss what God is doing in this hour. 
               </p>
             </div>
 
             <div className="mt-12 grid grid-cols-2 gap-6 max-w-md">
               <div className="border-t border-border pt-4">
-                <div className="font-display text-4xl md:text-5xl tracking-wider text-dark">2,500+</div>
+                <div className="font-display text-4xl md:text-5xl tracking-wider text-dark">400+</div>
                 <div className="eyebrow !text-text-muted mt-2">Expected Attendees</div>
               </div>
               <div className="border-t border-border pt-4">
@@ -130,9 +130,9 @@ function Home() {
       {/* Register CTA */}
       <section id="register" className="bg-cream py-24 md:py-40">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 text-center">
-          <Eyebrow className="inline-block">Three Days. One Generation.</Eyebrow>
+          <Eyebrow className="inline-block">THREE DAYS. ONE DESIRE.</Eyebrow>
           <h2 className="font-display text-6xl md:text-8xl lg:text-[140px] tracking-wider text-dark mt-6">
-            DON'T MISS IT.
+            Don't miss what god is doing in this generation.
           </h2>
           <p className="mt-6 max-w-md mx-auto text-base text-text-muted leading-relaxed">
             Early registration is open. Bring your friends. Bring your hunger.
