@@ -33,8 +33,9 @@ export function Hero() {
           NEW<br />WAVE
         </h1>
         <p className="mt-8 max-w-md text-base md:text-lg text-cream/70 leading-relaxed">
-          A gathering for young adults hungry for something real.<br />
-          Three days. One generation. No hype.
+          God is doing a new thing and moving in a young generation.&nbsp;
+          <br /><br />
+          New Wave is a multi-generational gathering where we encounter God together, get equipped for the moment, and step in what God is doing next.&nbsp;
         </p>
         <div className="flex flex-wrap gap-3 mt-10">
           <SiteLinkButton variant="primary" href="#register">

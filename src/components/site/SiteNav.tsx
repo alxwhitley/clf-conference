@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 const links = [
   { to: "/schedule", label: "Schedule" },
   { to: "/speakers", label: "Speakers" },
-  { to: "/pastors", label: "Pastors" },
+  { to: "/pastors", label: "For pastors & leaders" },
 ] as const;
 
 export function SiteNav() {

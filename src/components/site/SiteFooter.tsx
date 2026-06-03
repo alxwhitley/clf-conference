@@ -29,7 +29,7 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm">
               <li><Link to="/schedule" className="text-cream/80 hover:text-gold">Schedule</Link></li>
               <li><Link to="/speakers" className="text-cream/80 hover:text-gold">Speakers</Link></li>
-              <li><Link to="/pastors" className="text-cream/80 hover:text-gold">Pastors Corner</Link></li>
+              <li><Link to="/pastors" className="text-cream/80 hover:text-gold">For pastors & leaders</Link></li>
             </ul>
           </div>
 
