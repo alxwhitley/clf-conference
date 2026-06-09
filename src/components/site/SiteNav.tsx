@@ -37,7 +37,7 @@ export function SiteNav() {
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="font-display text-2xl md:text-3xl tracking-wider text-dark">
-          THE WAY
+          Way Conference
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
