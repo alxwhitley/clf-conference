@@ -33,7 +33,7 @@ export function Hero() {
           THE<br />WAY
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cream/70 leading-relaxed">
-          With so many believers stuck and struggling, The Way exists to show an emerging generation what a discipleship journey actually looks like when it works.
+          Way Conference exists to show an emerging generation what a discipleship journey actually looks like when it works.
         </p>
         <p className="mt-6 max-w-md text-sm md:text-base text-cream/50 leading-relaxed">
           A three-day conference for young adults ages 18–30.
