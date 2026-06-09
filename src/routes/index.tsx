@@ -75,17 +75,18 @@ function Home() {
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
                 THE WAY
               </h2>
-              <p className="mt-6 max-w-xl text-base md:text-lg text-dark/70 leading-relaxed">
-                A journey back to who you were made to be.
+              <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
+                The life of most believers is spent circling the same issues, repeating the same cycles that we never find a way forward into all the more God has for us. <br /><br />
+                We want to give young peoples the tools and understanding to help bridge the gap between who they are and stepping into the life God has for them.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: "01", title: "Deliverance", body: "Breaking free of the powers of darkness." },
-              { n: "02", title: "Transformation", body: "Not behavior modification — but a path forward that changes you from the inside out." },
-              { n: "03", title: "Rulership", body: "You were made to reign and rule in every area of life." },
+              { n: "01", title: "Deliverance", body: "Breaking free of the powers of darkness is more than a meeting. It's a real spiritual encounter." },
+              { n: "02", title: "Transformation", body: "Lasting change doesn't happen in a moment but a process. Most don't know what that process should look like." },
+              { n: "03", title: "Rulership", body: "You were made to reign and rule in every area of life. " },
               { n: "04", title: "Mission", body: "Advancing the gospel of the Kingdom into the world." },
             ].map((step) => (
               <div key={step.n} className="border-t border-dark/20 pt-5">
