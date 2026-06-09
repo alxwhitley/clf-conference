@@ -46,7 +46,13 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                We live in a moment where a generation is losing the thread of who they are. Institutions are failing. Trust is breaking down. And in the middle of the noise, people are searching. The Way is a three-day gathering designed to cut through it — restoring a generation to their identity so they can step boldly into their purpose.
+                Our generation is the most resourced in history — and yet most of us are still circling the same issues, stuck in the same patterns, unsure of who we are or why we're here.
+              </p>
+              <p>
+                The Way isn't another conference to shove more information in your head. It's built around one desire: to see a generation actually make the journey and discover what discipleship looks like when it works.
+              </p>
+              <p>
+                Join us as we move together through four stages — Deliverance, Transformation, Rulership, and Mission — and by the end of the weekend, you'll have a framework for the rest of your life.
               </p>
             </div>
 
@@ -69,25 +75,24 @@ function Home() {
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-12 md:mb-16">
             <div>
-              <Eyebrow>The Journey</Eyebrow>
+              <Eyebrow>The Way Forward</Eyebrow>
             </div>
             <div>
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
-                THE WAY
+                A JOURNEY BACK TO WHO YOU WERE MADE TO BE.
               </h2>
               <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
-                The life of most believers is spent circling the same issues, repeating the same cycles that we never find a way forward into all the more God has for us. <br /><br />
-                We want to give young peoples the tools and understanding to help bridge the gap between who they are and stepping into the life God has for them.
+                The weekend is structured around four essential stages of the discipleship journey.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: "01", title: "Deliverance", body: "Breaking free of the powers of darkness is more than a meeting. It's a real spiritual encounter." },
-              { n: "02", title: "Transformation", body: "Lasting change doesn't happen in a moment but a process. Most don't know what that process should look like." },
-              { n: "03", title: "Rulership", body: "You were made to reign and rule in every area of life. " },
-              { n: "04", title: "Mission", body: "Advancing the gospel of the Kingdom into the world." },
+              { n: "01", title: "Deliverance", body: "Most believers are circling the same issues thinking that more information or trying harder will break them out of it. We must get beyond personal struggle." },
+              { n: "02", title: "Transformation", body: "Most believers get free in a moment but never walk through the process that makes freedom last. We must become who God says we are." },
+              { n: "03", title: "Rulership", body: "Real transformation produces rulers — people who carry God's authority into their homes, work, and world. We must take dominion over what God has given us." },
+              { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we would advance the gospel into the world. We must carry what we've received beyond ourselves." },
             ].map((step) => (
               <div key={step.n} className="border-t border-dark/20 pt-5">
                 <div className="font-display text-5xl md:text-6xl tracking-wider text-gold leading-none">
