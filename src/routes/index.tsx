@@ -82,17 +82,17 @@ function Home() {
                 A JOURNEY BACK TO WHO YOU WERE MADE TO BE.
               </h2>
               <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
-                The weekend is structured around four essential stages of the discipleship journey.
+                The weekend is structured around four essential stages of the discipleship journey.&nbsp;
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: "01", title: "Deliverance", body: "Most believers are circling the same issues thinking that more information or trying harder will break them out of it. We must get beyond personal struggle." },
-              { n: "02", title: "Transformation", body: "Most believers get free in a moment but never walk through the process that makes freedom last. We must become who God says we are." },
-              { n: "03", title: "Rulership", body: "Real transformation produces rulers — people who carry God's authority into their homes, work, and world. We must take dominion over what God has given us." },
-              { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we would advance the gospel into the world. We must carry what we've received beyond ourselves." },
+              { n: "01", title: "Deliverance", body: "Most believers are circling the same issues thinking that more information or trying harder will break them out of it. " },
+              { n: "02", title: "Transformation", body: "Most believers get free in a moment but never walk through the process that makes freedom last. " },
+              { n: "03", title: "Rulership", body: "Real transformation produces rulers — people who carry God's authority into their homes, work, and world. " },
+              { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we would advance the gospel into the world." },
             ].map((step) => (
               <div key={step.n} className="border-t border-dark/20 pt-5">
                 <div className="font-display text-5xl md:text-6xl tracking-wider text-gold leading-none">
