@@ -96,11 +96,9 @@ function UnlockedState() {
           </div>
 
           <div className="space-y-4">
-            {breakoutList.map((s) => {
-              const opt = s.breakoutOptions?.find((o) => o.track === track);
-              if (!opt) return null;
-              return <ResourceCard key={s.id} session={s} optionTitle={opt.title} optionSpeaker={opt.speaker} />;
-            })}
+            {breakoutList.map((s) => (
+              <ResourceCard key={s.id} session={s} />
+            ))}
           </div>
         </div>
       </section>
