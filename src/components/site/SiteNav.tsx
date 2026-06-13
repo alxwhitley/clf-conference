@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const links = [
   { to: "/schedule", label: "Schedule" },
   { to: "/speakers", label: "Speakers" },
+  { to: "/resources", label: "Resources" },
   { to: "/pastors", label: "For pastors & leaders" },
 ] as const;
 
