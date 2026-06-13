@@ -14,7 +14,6 @@ import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PastorsRouteImport } from './routes/pastors'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ResourcesSlugRouteImport } from './routes/resources.$slug'
 
 const SpeakersRoute = SpeakersRouteImport.update({
   id: '/speakers',
@@ -41,68 +40,41 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResourcesSlugRoute = ResourcesSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => ResourcesRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/pastors': typeof PastorsRoute
-  '/resources': typeof ResourcesRouteWithChildren
+  '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
   '/speakers': typeof SpeakersRoute
-  '/resources/$slug': typeof ResourcesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/pastors': typeof PastorsRoute
-  '/resources': typeof ResourcesRouteWithChildren
+  '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
   '/speakers': typeof SpeakersRoute
-  '/resources/$slug': typeof ResourcesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/pastors': typeof PastorsRoute
-  '/resources': typeof ResourcesRouteWithChildren
+  '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
   '/speakers': typeof SpeakersRoute
-  '/resources/$slug': typeof ResourcesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/pastors'
-    | '/resources'
-    | '/schedule'
-    | '/speakers'
-    | '/resources/$slug'
+  fullPaths: '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/pastors'
-    | '/resources'
-    | '/schedule'
-    | '/speakers'
-    | '/resources/$slug'
-  id:
-    | '__root__'
-    | '/'
-    | '/pastors'
-    | '/resources'
-    | '/schedule'
-    | '/speakers'
-    | '/resources/$slug'
+  to: '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
+  id: '__root__' | '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PastorsRoute: typeof PastorsRoute
-  ResourcesRoute: typeof ResourcesRouteWithChildren
+  ResourcesRoute: typeof ResourcesRoute
   ScheduleRoute: typeof ScheduleRoute
   SpeakersRoute: typeof SpeakersRoute
 }
@@ -144,35 +116,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/resources/$slug': {
-      id: '/resources/$slug'
-      path: '/$slug'
-      fullPath: '/resources/$slug'
-      preLoaderRoute: typeof ResourcesSlugRouteImport
-      parentRoute: typeof ResourcesRoute
-    }
   }
 }
-
-interface ResourcesRouteChildren {
-  ResourcesSlugRoute: typeof ResourcesSlugRoute
-}
-
-const ResourcesRouteChildren: ResourcesRouteChildren = {
-  ResourcesSlugRoute: ResourcesSlugRoute,
-}
-
-const ResourcesRouteWithChildren = ResourcesRoute._addFileChildren(
-  ResourcesRouteChildren,
-)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PastorsRoute: PastorsRoute,
-  ResourcesRoute: ResourcesRouteWithChildren,
+  ResourcesRoute: ResourcesRoute,
   ScheduleRoute: ScheduleRoute,
   SpeakersRoute: SpeakersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
