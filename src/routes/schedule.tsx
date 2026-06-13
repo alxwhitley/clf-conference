@@ -179,80 +179,31 @@ function SchedulePage() {
   );
 }
 
-function SessionCard({ session, track }: { session: Session; track: Track }) {
-  const [open, setOpen] = useState(false);
-  const isBreakout = session.type === "breakout";
-  const option = session.breakoutOptions?.find((o) => o.track === track);
-
-  if (!isBreakout) {
-    return (
-      <div className="bg-surface p-5 md:p-6">
-        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <div className="eyebrow !text-text-muted">{session.time}</div>
-          {session.type === "meal" && (
-            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
-              Meal
-            </span>
-          )}
-        </div>
-        <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-2">
-          {session.title}
-        </h3>
-        {session.description && (
-          <p className="mt-3 text-sm md:text-base text-text-muted leading-relaxed">
-            {session.description}
-          </p>
-        )}
-      </div>
-    );
-  }
-
+function SessionCard({ session }: { session: Session; track: Track }) {
   return (
-    <div className="bg-surface">
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="w-full p-5 md:p-6 text-left min-h-[44px] flex items-start justify-between gap-4"
-      >
-        <div>
-          <div className="eyebrow !text-text-muted">{session.time}</div>
-          <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-2">
-            {session.title}
-          </h3>
-          {option && (
-            <div className="mt-2 text-sm text-text-muted">
-              {option.speaker} — {option.title}
-            </div>
-          )}
-        </div>
-        <ChevronDown
-          size={20}
-          className={cn("text-dark/60 shrink-0 transition-transform", open && "rotate-180")}
-        />
-      </button>
-      <div
-        className={cn(
-          "grid transition-all duration-300 ease-out",
-          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+    <div className="bg-surface p-5 md:p-6">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+        <div className="eyebrow !text-text-muted">{session.time}</div>
+        {session.type === "meal" && (
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Meal
+          </span>
         )}
-      >
-        <div className="overflow-hidden">
-          {option ? (
-            <div className="px-5 md:px-6 pb-6 border-t border-border pt-4">
-              <div className="eyebrow !text-gold">{option.speaker}</div>
-              <h4 className="font-display text-xl md:text-2xl tracking-wider text-dark mt-2">
-                {option.title}
-              </h4>
-              <p className="mt-3 text-sm text-text-muted leading-relaxed">
-                {option.description}
-              </p>
-            </div>
-          ) : (
-            <div className="px-5 md:px-6 pb-6 text-sm text-text-muted">
-              No breakout for this track in this slot.
-            </div>
-          )}
-        </div>
+        {session.type === "breakout" && (
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Breakout
+          </span>
+        )}
       </div>
+      <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-2">
+        {session.title}
+      </h3>
+      {session.description && (
+        <p className="mt-3 text-sm md:text-base text-text-muted leading-relaxed">
+          {session.description}
+        </p>
+      )}
     </div>
   );
 }
+

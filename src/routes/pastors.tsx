@@ -125,9 +125,11 @@ function PastorsPage() {
                   <h3 className="font-display text-2xl tracking-wider text-cream">
                     {s.name}
                   </h3>
-                  <div className="text-sm text-cream/60 mt-1">
-                    {s.title} — {s.church}
-                  </div>
+                  {(s.title || s.church) && (
+                    <div className="text-sm text-cream/60 mt-1">
+                      {[s.title, s.church].filter(Boolean).join(" — ")}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -161,75 +163,30 @@ function PastorsPage() {
 }
 
 function PastorsSessionCard({ session }: { session: Session }) {
-  const [open, setOpen] = useState(false);
-  const isBreakout = session.type === "breakout";
-  const option = session.breakoutOptions?.find((o) => o.track === "pastors");
-
-  if (!isBreakout) {
-    return (
-      <div className="bg-surface p-5 md:p-6">
-        <div className="flex flex-wrap items-baseline gap-x-4">
-          <div className="eyebrow !text-text-muted">{session.time}</div>
-          {session.type === "meal" && (
-            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
-              Meal
-            </span>
-          )}
-        </div>
-        <h4 className="font-display text-2xl tracking-wider text-dark mt-2">
-          {session.title}
-        </h4>
-        {session.description && (
-          <p className="mt-2 text-sm text-text-muted leading-relaxed">
-            {session.description}
-          </p>
-        )}
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-surface">
-      <button
-        onClick={() => setOpen((o) => !o)}
-        className="w-full p-5 md:p-6 text-left min-h-[44px] flex items-start justify-between gap-4"
-      >
-        <div>
-          <div className="eyebrow !text-text-muted">{session.time}</div>
-          <h4 className="font-display text-2xl tracking-wider text-dark mt-2">
-            {session.title}
-          </h4>
-          {option && (
-            <div className="text-sm text-text-muted mt-1">
-              {option.speaker} — {option.title}
-            </div>
-          )}
-        </div>
-        <ChevronDown
-          size={20}
-          className={cn("text-dark/60 shrink-0 transition-transform", open && "rotate-180")}
-        />
-      </button>
-      <div
-        className={cn(
-          "grid transition-all duration-300 ease-out",
-          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+    <div className="bg-surface p-5 md:p-6">
+      <div className="flex flex-wrap items-baseline gap-x-4">
+        <div className="eyebrow !text-text-muted">{session.time}</div>
+        {session.type === "meal" && (
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Meal
+          </span>
         )}
-      >
-        <div className="overflow-hidden">
-          {option && (
-            <div className="px-5 md:px-6 pb-6 border-t border-border pt-4">
-              <div className="eyebrow !text-gold">{option.speaker}</div>
-              <h5 className="font-display text-xl tracking-wider text-dark mt-2">
-                {option.title}
-              </h5>
-              <p className="mt-3 text-sm text-text-muted leading-relaxed">
-                {option.description}
-              </p>
-            </div>
-          )}
-        </div>
+        {session.type === "breakout" && (
+          <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-gold">
+            Breakout
+          </span>
+        )}
       </div>
+      <h4 className="font-display text-2xl tracking-wider text-dark mt-2">
+        {session.title}
+      </h4>
+      {session.description && (
+        <p className="mt-2 text-sm text-text-muted leading-relaxed">
+          {session.description}
+        </p>
+      )}
     </div>
   );
 }
+
