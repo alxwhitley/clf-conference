@@ -1,32 +1,29 @@
-import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Download, FileText, ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Eyebrow } from "@/components/site/Eyebrow";
-import { YouTubeCard } from "@/components/site/YouTubeCard";
-import { mainSessions, breakoutNotes, videoDownloads } from "@/data/resources";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { TrackToggle } from "@/components/site/TrackToggle";
+import { useTrack } from "@/hooks/useTrack";
+import { siteConfig } from "@/config/site";
+import { sessions, type Session } from "@/data/sessions";
+import { resources } from "@/data/resources";
+import { Download, FileText, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Way Conference" },
+      { title: "Resources — The Way Conference" },
       {
         name: "description",
         content:
-          "Watch main session videos, read breakout notes, and download media from Way Conference.",
+          "Videos, notes, and slides from every session of The Way Conference.",
       },
-      { property: "og:title", content: "Resources — Way Conference" },
+      { property: "og:title", content: "Resources — The Way Conference" },
       {
         property: "og:description",
         content:
-          "Watch main session videos, read breakout notes, and download media from Way Conference.",
+          "Videos, notes, and slides from every session of The Way Conference.",
       },
     ],
   }),
@@ -34,140 +31,168 @@ export const Route = createFileRoute("/resources")({
 });
 
 function ResourcesPage() {
-  const navigate = useNavigate();
-  const [comingSoonOpen, setComingSoonOpen] = useState(false);
+  if (!siteConfig.resourcesUnlocked) return <LockedState />;
+  return <UnlockedState />;
+}
+
+function LockedState() {
+  return (
+    <section className="min-h-screen bg-dark text-cream grain flex items-center justify-center px-5 md:px-10 py-32 text-center">
+      <div className="max-w-2xl">
+        <Eyebrow>Available October 17</Eyebrow>
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider mt-6">
+          RESOURCES DROP WHEN THE CONFERENCE BEGINS.
+        </h1>
+        <p className="mt-8 text-base md:text-lg text-cream/60 leading-relaxed">
+          Check back Friday, October 17.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function UnlockedState() {
+  const { track } = useTrack();
+
+  const mainSessionList = sessions.filter(
+    (s) => s.type !== "breakout" && s.type !== "meal",
+  );
+  const breakoutList = sessions.filter((s) => s.type === "breakout");
 
   return (
-    <div className="bg-dark text-cream">
+    <>
       <PageHero
         eyebrow="Resources"
-        title="Take It With You"
-        subtitle="Every main session, every breakout, and everything you need to keep walking the way after the weekend ends."
+        title="TAKE IT WITH YOU"
+        subtitle="Every session, captured. Watch, read, and download."
       />
 
-      {/* Main sessions */}
-      <section className="py-20 md:py-28 border-b border-cream/10">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-10">
+      {/* Main sessions — shared */}
+      <section className="bg-dark text-cream py-16 md:py-24 border-b border-cream/10">
+        <div className="mx-auto max-w-[1100px] px-5 md:px-10">
           <Eyebrow>Main Sessions</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4 max-w-3xl">
-            Watch every main session.
+          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4">
+            Every main session.
           </h2>
-          <p className="mt-4 max-w-xl text-cream/60">
-            Click any thumbnail to watch on YouTube.
-          </p>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mainSessions.map((s) => (
-              <YouTubeCard key={s.id} {...s} />
+          <div className="mt-10 space-y-4">
+            {mainSessionList.map((s) => (
+              <ResourceCard key={s.id} session={s} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Breakout notes */}
-      <section className="py-20 md:py-28 border-b border-cream/10">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-          <Eyebrow>Breakout Notes</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4 max-w-3xl">
-            Notes from the breakouts.
-          </h2>
-          <p className="mt-4 max-w-xl text-cream/60">
-            Full session notes, written up and downloadable as PDF.
-          </p>
+      {/* Breakouts — track-filtered */}
+      <section className="bg-dark-warm text-cream py-16 md:py-24">
+        <div className="mx-auto max-w-[1100px] px-5 md:px-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+            <div>
+              <Eyebrow>Breakouts</Eyebrow>
+              <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4">
+                Breakout sessions.
+              </h2>
+            </div>
+            <TrackToggle />
+          </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-cream/10 border border-cream/10">
-            {breakoutNotes.map((n) => {
-              const hasNotes = n.notesMarkdown.trim().length > 0;
-              return (
-                <button
-                  key={n.slug}
-                  type="button"
-                  onClick={() => {
-                    if (hasNotes) {
-                      navigate({ to: "/resources/$slug", params: { slug: n.slug } });
-                    } else {
-                      setComingSoonOpen(true);
-                    }
-                  }}
-                  className="group block bg-dark p-8 md:p-10 hover:bg-dark-warm transition-colors text-left w-full"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="eyebrow !text-cream/40">{n.day}</div>
-                    <FileText
-                      size={18}
-                      className="text-cream/40 group-hover:text-gold transition-colors"
-                    />
-                  </div>
-                  <h3 className="font-display text-2xl md:text-3xl tracking-wider mt-4 group-hover:text-gold transition-colors">
-                    {n.title}
-                  </h3>
-                  <div className="text-sm text-cream/60 mt-2">{n.speaker}</div>
-                  <p className="text-cream/70 mt-4 leading-relaxed">{n.excerpt}</p>
-                  <div className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
-                    Read notes <ArrowUpRight size={14} />
-                  </div>
-                </button>
-              );
+          <div className="space-y-4">
+            {breakoutList.map((s) => {
+              const opt = s.breakoutOptions?.find((o) => o.track === track);
+              if (!opt) return null;
+              return <ResourceCard key={s.id} session={s} optionTitle={opt.title} optionSpeaker={opt.speaker} />;
             })}
           </div>
         </div>
       </section>
+    </>
+  );
+}
 
-      <Dialog open={comingSoonOpen} onOpenChange={setComingSoonOpen}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle className="font-display text-2xl tracking-wider">
-              Notes coming soon
-            </DialogTitle>
-            <DialogDescription className="pt-2 text-base">
-              These notes will be displayed here once they're made available.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
+function ResourceCard({
+  session,
+  optionTitle,
+  optionSpeaker,
+}: {
+  session: Session;
+  optionTitle?: string;
+  optionSpeaker?: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const resource = resources.find((r) => r.sessionId === session.id);
 
+  return (
+    <div className="bg-dark/40 border border-cream/10">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="w-full p-5 md:p-6 text-left min-h-[44px] flex items-start justify-between gap-4"
+      >
+        <div>
+          <div className="eyebrow !text-cream/40">{session.day} · {session.time}</div>
+          <h3 className="font-display text-xl md:text-2xl tracking-wider text-cream mt-2">
+            {optionTitle ?? session.title}
+          </h3>
+          {optionSpeaker && (
+            <div className="text-sm text-cream/60 mt-1">{optionSpeaker}</div>
+          )}
+        </div>
+        <ChevronDown
+          size={20}
+          className={cn("text-cream/60 shrink-0 transition-transform", open && "rotate-180")}
+        />
+      </button>
 
-      {/* Video downloads */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-          <Eyebrow>Downloads</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4 max-w-3xl">
-            Video + audio files.
-          </h2>
-          <p className="mt-4 max-w-xl text-cream/60">
-            Hosted on Google Drive. Free to download and share.
-          </p>
+      <div
+        className={cn(
+          "grid transition-all duration-300 ease-out",
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="px-5 md:px-6 pb-6 border-t border-cream/10 pt-5 space-y-5">
+            {resource?.videoUrl ? (
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  src={resource.videoUrl}
+                  title={session.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="aspect-video w-full bg-cream/5 flex items-center justify-center text-cream/40 text-sm">
+                Video coming soon
+              </div>
+            )}
 
-          <div className="mt-12 space-y-px bg-cream/10 border border-cream/10">
-            {videoDownloads.map((v) => (
-              <a
-                key={v.title}
-                href={v.driveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row md:items-center justify-between gap-4 bg-dark p-6 md:p-8 hover:bg-dark-warm transition-colors"
-              >
-                <div className="flex-1">
-                  <h3 className="font-display text-xl md:text-2xl tracking-wider group-hover:text-gold transition-colors">
-                    {v.title}
-                  </h3>
-                  <p className="text-cream/60 mt-2 text-sm md:text-base">
-                    {v.description}
-                  </p>
-                  {v.sizeLabel && (
-                    <div className="eyebrow !text-cream/40 mt-3">
-                      {v.sizeLabel}
-                    </div>
-                  )}
-                </div>
-                <div className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] shrink-0">
-                  <Download size={14} /> Download
-                </div>
-              </a>
-            ))}
+            <div className="flex flex-col sm:flex-row gap-3">
+              {resource?.notesUrl && (
+                <a
+                  href={resource.notesUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+                >
+                  <FileText size={14} /> Download Notes
+                </a>
+              )}
+              {resource?.slidesUrl && (
+                <a
+                  href={resource.slidesUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 border border-cream/30 text-cream text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] hover:bg-cream/5"
+                >
+                  <Download size={14} /> Download Slides
+                </a>
+              )}
+              {!resource?.notesUrl && !resource?.slidesUrl && (
+                <div className="text-sm text-cream/40">No downloads available yet.</div>
+              )}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
