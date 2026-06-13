@@ -119,7 +119,7 @@ function SchedulePage() {
         <div className="mx-auto max-w-[1100px] px-5 md:px-10 md:grid md:grid-cols-[200px_1fr] md:gap-12">
           {/* Desktop sticky day sidebar */}
           <aside className="hidden md:block">
-            <div className="sticky top-[140px] flex flex-col gap-2">
+            <div className="sticky top-[176px] flex flex-col gap-2">
               {days.map((d) => (
                 <button
                   key={d}
