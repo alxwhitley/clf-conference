@@ -27,27 +27,9 @@ export const sessions: Session[] = [
 
   // SATURDAY — shared sessions + breakouts
   { id: "sat-morning", day: "saturday", time: "10:00 AM", title: "Morning Session", description: "Session two of The Way.", tracks: ["main", "pastors"], type: "main-session" },
-  {
-    id: "sat-breakout-1", day: "saturday", time: "1:00 PM", title: "Breakout Session 1", description: "", tracks: ["main", "pastors"], type: "breakout",
-    breakoutOptions: [
-      { track: "main", speaker: "Tom Bedford", title: "Walking in Deliverance", description: "Practical tools for sustained freedom." },
-      { track: "pastors", speaker: "Buck Hudson", title: "Leading a Deliverance Culture", description: "Building a church culture where freedom is the norm." },
-    ],
-  },
-  {
-    id: "sat-breakout-2", day: "saturday", time: "2:30 PM", title: "Breakout Session 2", description: "", tracks: ["main", "pastors"], type: "breakout",
-    breakoutOptions: [
-      { track: "main", speaker: "Buck Hudson", title: "Identity After the Breakthrough", description: "Who are you on the other side of freedom?" },
-      { track: "pastors", speaker: "JB Masinde", title: "Shepherding Transformation", description: "How pastors guide their people through real change." },
-    ],
-  },
-  {
-    id: "sat-breakout-3", day: "saturday", time: "4:00 PM", title: "Breakout Session 3", description: "", tracks: ["main", "pastors"], type: "breakout",
-    breakoutOptions: [
-      { track: "main", speaker: "JB Masinde", title: "Stepping Into Mission", description: "From identity to assignment — what your mission looks like." },
-      { track: "pastors", speaker: "Tom Bedford", title: "The Pastor as Missionary", description: "Reclaiming apostolic vision for your local church." },
-    ],
-  },
+  { id: "sat-breakout-1", day: "saturday", time: "1:00 PM", title: "Breakout Session 1", description: "", tracks: ["main", "pastors"], type: "breakout" },
+  { id: "sat-breakout-2", day: "saturday", time: "2:30 PM", title: "Breakout Session 2", description: "", tracks: ["main", "pastors"], type: "breakout" },
+  { id: "sat-breakout-3", day: "saturday", time: "4:00 PM", title: "Breakout Session 3", description: "", tracks: ["main", "pastors"], type: "breakout" },
   { id: "sat-night", day: "saturday", time: "7:00 PM", title: "Night Session", description: "The climax of the weekend. All attendees gather.", tracks: ["main", "pastors"], type: "main-session" },
 
   // SUNDAY — shared
