@@ -13,6 +13,7 @@ import { Route as SpeakersRouteImport } from './routes/speakers'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PastorsRouteImport } from './routes/pastors'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SpeakersRoute = SpeakersRouteImport.update({
@@ -35,6 +36,11 @@ const PastorsRoute = PastorsRouteImport.update({
   path: '/pastors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +49,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/pastors': typeof PastorsRoute
   '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/pastors': typeof PastorsRoute
   '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/pastors': typeof PastorsRoute
   '/resources': typeof ResourcesRoute
   '/schedule': typeof ScheduleRoute
@@ -65,14 +74,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/pastors'
+    | '/resources'
+    | '/schedule'
+    | '/speakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
-  id: '__root__' | '/' | '/pastors' | '/resources' | '/schedule' | '/speakers'
+  to: '/' | '/about' | '/pastors' | '/resources' | '/schedule' | '/speakers'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/pastors'
+    | '/resources'
+    | '/schedule'
+    | '/speakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   PastorsRoute: typeof PastorsRoute
   ResourcesRoute: typeof ResourcesRoute
   ScheduleRoute: typeof ScheduleRoute
@@ -109,6 +132,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PastorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,6 +151,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   PastorsRoute: PastorsRoute,
   ResourcesRoute: ResourcesRoute,
   ScheduleRoute: ScheduleRoute,
