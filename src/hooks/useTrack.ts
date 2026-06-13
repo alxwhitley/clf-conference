@@ -12,6 +12,7 @@ export function useTrack() {
       to: ".",
       search: (prev: Record<string, unknown>) => ({ ...(prev ?? {}), track: t }),
       replace: true,
+      resetScroll: false,
     });
   };
 
