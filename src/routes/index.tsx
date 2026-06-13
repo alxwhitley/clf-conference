@@ -194,9 +194,13 @@ function Home() {
           </div>
 
           <div className="mt-10">
-            <SiteLinkButton variant="ghost-light" to="/schedule" search={{ track }}>
+            <Link
+              to="/schedule"
+              search={{ track }}
+              className="inline-flex items-center justify-center px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] bg-transparent text-cream border border-cream/70 hover:bg-cream hover:text-dark transition-colors"
+            >
               See Full Schedule
-            </SiteLinkButton>
+            </Link>
           </div>
         </div>
       </section>
