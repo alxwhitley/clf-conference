@@ -8,24 +8,9 @@ export type Speaker = {
 };
 
 export const speakers: Speaker[] = [
-  {
-    id: "alana-fields",
-    name: "Alana Fields",
-    ministry: "Author + Teacher",
-    bio: "Alana is the author of three books on prayer and presence. She teaches young women across the country to hear God's voice and live unafraid.",
-  },
-  {
-    id: "david-okafor",
-    name: "David Okafor",
-    ministry: "Worship Pastor — The Bridge",
-    bio: "David leads worship across the US and writes songs for the local church. His sets carry a rare combination of reverence and joy.",
-  },
-  {
-    id: "priscilla-jones",
-    name: "Priscilla Jones",
-    ministry: "Founder — Sent Generation",
-    bio: "Priscilla has spent fifteen years mobilizing young adults into missions. She teaches with the conviction of someone who has gone first.",
-  },
+  { id: "tom-bedford", name: "Tom Bedford", ministry: "", bio: "" },
+  { id: "buck-hudson", name: "Buck Hudson", ministry: "", bio: "" },
+  { id: "jb-masinde", name: "JB Masinde", ministry: "", bio: "" },
 ];
 
 export type Session = {
