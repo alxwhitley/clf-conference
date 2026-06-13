@@ -106,15 +106,7 @@ function UnlockedState() {
   );
 }
 
-function ResourceCard({
-  session,
-  optionTitle,
-  optionSpeaker,
-}: {
-  session: Session;
-  optionTitle?: string;
-  optionSpeaker?: string;
-}) {
+function ResourceCard({ session }: { session: Session }) {
   const [open, setOpen] = useState(false);
   const resource = resources.find((r) => r.sessionId === session.id);
 
@@ -127,17 +119,15 @@ function ResourceCard({
         <div>
           <div className="eyebrow !text-cream/40">{session.day} · {session.time}</div>
           <h3 className="font-display text-xl md:text-2xl tracking-wider text-cream mt-2">
-            {optionTitle ?? session.title}
+            {session.title}
           </h3>
-          {optionSpeaker && (
-            <div className="text-sm text-cream/60 mt-1">{optionSpeaker}</div>
-          )}
         </div>
         <ChevronDown
           size={20}
           className={cn("text-cream/60 shrink-0 transition-transform", open && "rotate-180")}
         />
       </button>
+
 
       <div
         className={cn(
