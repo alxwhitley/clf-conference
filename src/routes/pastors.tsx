@@ -125,9 +125,11 @@ function PastorsPage() {
                   <h3 className="font-display text-2xl tracking-wider text-cream">
                     {s.name}
                   </h3>
-                  <div className="text-sm text-cream/60 mt-1">
-                    {s.title} — {s.church}
-                  </div>
+                  {(s.title || s.church) && (
+                    <div className="text-sm text-cream/60 mt-1">
+                      {[s.title, s.church].filter(Boolean).join(" — ")}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
