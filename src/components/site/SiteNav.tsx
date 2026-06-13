@@ -6,6 +6,7 @@ import { useTrack } from "@/hooks/useTrack";
 import { siteConfig } from "@/config/site";
 
 const links = [
+  { to: "/about", label: "About" },
   { to: "/schedule", label: "Schedule" },
   { to: "/speakers", label: "Speakers" },
   { to: "/resources", label: "Resources" },
