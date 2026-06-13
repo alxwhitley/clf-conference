@@ -3,9 +3,12 @@ import { Hero } from "@/components/site/Hero";
 import { MetaStrip } from "@/components/site/MetaStrip";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { SpeakerCard } from "@/components/site/SpeakerCard";
-import { ScheduleRow } from "@/components/site/ScheduleRow";
 import { SiteLinkButton } from "@/components/site/Button";
+import { TrackToggle } from "@/components/site/TrackToggle";
 import { speakers } from "@/data/conference";
+import { sessions, dayLabels } from "@/data/sessions";
+import { useTrack } from "@/hooks/useTrack";
+import { siteConfig } from "@/config/site";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -29,10 +32,17 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const { track } = useTrack();
+  const previewSessions = sessions
+    .filter((s) => s.tracks.includes(track) && s.type !== "meal")
+    .slice(0, 4);
+  const registerHref =
+    track === "pastors" ? siteConfig.registrationUrlPastors : siteConfig.registrationUrlMain;
   return (
     <>
       <Hero />
       <MetaStrip />
+
 
       {/* About */}
       <section className="bg-cream py-24 md:py-32">
@@ -144,7 +154,7 @@ function Home() {
       {/* Schedule teaser */}
       <section className="bg-dark-warm text-cream py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
-          <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-12 md:mb-16">
+          <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-10 md:mb-12">
             <div>
               <Eyebrow>What's Happening</Eyebrow>
             </div>
@@ -155,15 +165,36 @@ function Home() {
             </div>
           </div>
 
+          <div className="mb-8">
+            <TrackToggle />
+          </div>
+
           <div className="border-t border-cream/10">
-            <ScheduleRow day="Friday" title="Opening Night Session" tag="Everyone" dark />
-            <ScheduleRow day="Saturday" title="Breakout Sessions" tag="Main + Pastors" dark />
-            <ScheduleRow day="Saturday" title="Night Session" tag="Everyone" dark />
-            <ScheduleRow day="Sunday" title="Morning Gathering" tag="Everyone" dark />
+            {previewSessions.map((s) => {
+              const opt = s.breakoutOptions?.find((o) => o.track === track);
+              return (
+                <div
+                  key={s.id}
+                  className="grid grid-cols-[100px_1fr] md:grid-cols-[180px_1fr] items-baseline gap-4 py-5 md:py-6 border-b border-cream/10"
+                >
+                  <div className="eyebrow !text-cream/40">
+                    {dayLabels[s.day].short} · {s.time}
+                  </div>
+                  <div>
+                    <div className="font-display text-xl md:text-2xl tracking-wider text-cream">
+                      {opt?.title ?? s.title}
+                    </div>
+                    {opt?.speaker && (
+                      <div className="text-xs text-cream/50 mt-1">{opt.speaker}</div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-10">
-            <SiteLinkButton variant="ghost-light" to="/schedule">
+            <SiteLinkButton variant="ghost-light" to="/schedule" search={{ track }}>
               See Full Schedule
             </SiteLinkButton>
           </div>
@@ -181,7 +212,7 @@ function Home() {
             Early registration is open. Bring your friends. Bring your hunger.
           </p>
           <div className="mt-10">
-            <SiteLinkButton variant="primary" href="#register">
+            <SiteLinkButton variant="primary" href={registerHref}>
               Register Now
             </SiteLinkButton>
           </div>
