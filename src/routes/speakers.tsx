@@ -63,10 +63,14 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
         <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark">
           {speaker.name}
         </h3>
-        <div className="text-sm text-text-muted mt-1">
-          {speaker.title} — {speaker.church}
-        </div>
-        <p className="mt-3 text-sm text-text-muted leading-relaxed">{speaker.bio}</p>
+        {(speaker.title || speaker.church) && (
+          <div className="text-sm text-text-muted mt-1">
+            {[speaker.title, speaker.church].filter(Boolean).join(" — ")}
+          </div>
+        )}
+        {speaker.bio && (
+          <p className="mt-3 text-sm text-text-muted leading-relaxed">{speaker.bio}</p>
+        )}
         <div className="mt-4 flex flex-wrap gap-2">
           {speaker.roles.map((r) => (
             <RoleBadge key={r} role={r} />
