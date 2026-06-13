@@ -1,9 +1,17 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 import { Download, FileText, ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { Eyebrow } from "@/components/site/Eyebrow";
 import { YouTubeCard } from "@/components/site/YouTubeCard";
 import { mainSessions, breakoutNotes, videoDownloads } from "@/data/resources";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -26,6 +34,9 @@ export const Route = createFileRoute("/resources")({
 });
 
 function ResourcesPage() {
+  const navigate = useNavigate();
+  const [comingSoonOpen, setComingSoonOpen] = useState(false);
+
   return (
     <div className="bg-dark text-cream">
       <PageHero
@@ -65,33 +76,56 @@ function ResourcesPage() {
           </p>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-px bg-cream/10 border border-cream/10">
-            {breakoutNotes.map((n) => (
-              <Link
-                key={n.slug}
-                to="/resources/$slug"
-                params={{ slug: n.slug }}
-                className="group block bg-dark p-8 md:p-10 hover:bg-dark-warm transition-colors"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="eyebrow !text-cream/40">{n.day}</div>
-                  <FileText
-                    size={18}
-                    className="text-cream/40 group-hover:text-gold transition-colors"
-                  />
-                </div>
-                <h3 className="font-display text-2xl md:text-3xl tracking-wider mt-4 group-hover:text-gold transition-colors">
-                  {n.title}
-                </h3>
-                <div className="text-sm text-cream/60 mt-2">{n.speaker}</div>
-                <p className="text-cream/70 mt-4 leading-relaxed">{n.excerpt}</p>
-                <div className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
-                  Read notes <ArrowUpRight size={14} />
-                </div>
-              </Link>
-            ))}
+            {breakoutNotes.map((n) => {
+              const hasNotes = n.notesMarkdown.trim().length > 0;
+              return (
+                <button
+                  key={n.slug}
+                  type="button"
+                  onClick={() => {
+                    if (hasNotes) {
+                      navigate({ to: "/resources/$slug", params: { slug: n.slug } });
+                    } else {
+                      setComingSoonOpen(true);
+                    }
+                  }}
+                  className="group block bg-dark p-8 md:p-10 hover:bg-dark-warm transition-colors text-left w-full"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="eyebrow !text-cream/40">{n.day}</div>
+                    <FileText
+                      size={18}
+                      className="text-cream/40 group-hover:text-gold transition-colors"
+                    />
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl tracking-wider mt-4 group-hover:text-gold transition-colors">
+                    {n.title}
+                  </h3>
+                  <div className="text-sm text-cream/60 mt-2">{n.speaker}</div>
+                  <p className="text-cream/70 mt-4 leading-relaxed">{n.excerpt}</p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
+                    Read notes <ArrowUpRight size={14} />
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
+
+      <Dialog open={comingSoonOpen} onOpenChange={setComingSoonOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl tracking-wider">
+              Notes coming soon
+            </DialogTitle>
+            <DialogDescription className="pt-2 text-base">
+              These notes will be displayed here once they're made available.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
 
       {/* Video downloads */}
       <section className="py-20 md:py-28">

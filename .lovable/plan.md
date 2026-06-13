@@ -1,40 +1,33 @@
-# Resources Page Plan
+# Breakout Notes — Empty State + Detail Page Polish
 
-A new `/resources` route showcasing main session videos, breakout session notes (blog-style), and downloadable video files. All content is hardcoded in a TypeScript data file for easy editing.
+## Changes
 
-## What gets built
+### 1. Data shape (`src/data/resources.ts`)
+Treat an empty `notesMarkdown` (or whitespace-only) as "notes not yet available." No schema change required — content authors just leave the string empty until ready.
 
-### 1. Data file: `src/data/resources.ts`
-Three exported arrays:
-- `mainSessions`: `{ id, title, speaker, day, youtubeUrl }[]` — YouTube IDs are parsed from the URL to build thumbnail URLs (`https://img.youtube.com/vi/{id}/maxresdefault.jpg`).
-- `breakoutNotes`: `{ slug, title, speaker, day, notesMarkdown, pdfUrl? }[]` — markdown notes + optional PDF link.
-- `videoDownloads`: `{ title, description, driveUrl, sizeLabel? }[]` — Google Drive share URLs.
+### 2. Card behavior (`src/routes/resources.tsx`)
+Replace the `<Link>` wrapping each breakout card with a click handler:
+- If `notesMarkdown.trim()` is non-empty → navigate to `/resources/$slug` (current behavior).
+- If empty → open a small modal (shadcn `Dialog`) saying: **"Notes coming soon — these will be published once they're made available."** with a close button.
 
-### 2. New routes
-- `src/routes/resources.tsx` — index page with three sections:
-  - **Main Sessions** — grid of YouTube thumbnail cards (uses new `YouTubeCard` component). Click → opens YouTube in a new tab.
-  - **Breakout Session Notes** — list of cards linking to each note's detail page.
-  - **Video Downloads** — list of cards with "Download from Google Drive" buttons.
-- `src/routes/resources.$slug.tsx` — blog-style detail page for a single breakout note. Renders markdown, with a "Download PDF" button at the top if `pdfUrl` is set.
+The card visual (read more + download icon) stays the same.
 
-### 3. New components
-- `src/components/site/YouTubeCard.tsx` — thumbnail image with play-button overlay, title, speaker; entire card is an `<a target="_blank">` to the YouTube URL.
-- `src/components/site/ResourceCard.tsx` — shared card style for notes and downloads, matching the existing dark/cream design tokens.
+### 3. Detail page (`src/routes/resources.$slug.tsx`)
+Move the **Download PDF** button to the upper-right corner of the page header, floating opposite the back link, so it's always visible at the top. When `pdfUrl` is missing, the button is hidden (the card-level popup already gates entry, so this is just a safety).
 
-### 4. Navigation
-Add `Resources` link to `SiteNav` (desktop + mobile menus), placed alongside Schedule / Speakers / For pastors & leaders.
+Layout sketch:
+```
+← All resources                                    [ Download PDF ]
+Friday — Oct 17
+Identity Beyond Performance
+Alana Fields
 
-## Technical notes
-- Markdown rendering: install `react-markdown` + `remark-gfm` for the notes detail page.
-- YouTube ID parsing: small util in `src/lib/youtube.ts` handling `youtube.com/watch?v=`, `youtu.be/`, and `youtube.com/shorts/` formats; falls back to `hqdefault.jpg` if `maxresdefault` 404s (via `onError`).
-- PDF "download": plain `<a href={pdfUrl} download target="_blank">` — no generation, just links out.
-- Drive "download": plain `<a href={driveUrl} target="_blank">` — opens the share link.
-- Styling: reuse existing tokens (`bg-dark`, `text-cream`, `text-gold`, `font-display`, `eyebrow`) and `SiteLinkButton` for CTAs. No new design tokens needed.
-- New route metadata: each route gets its own `head()` with unique title/description (per route-architecture guidance).
+## Opening
+...notes body...
+```
+
+On mobile the download button drops below the back link to avoid crowding.
 
 ## Out of scope
-- No backend, no auth, no admin UI.
-- No PDF generation — PDFs must be pre-made and hosted (Drive link works fine).
-- No video hosting — Drive links only.
-
-To add new content later, edit `src/data/resources.ts`.
+- No changes to YouTube cards or video downloads section.
+- No backend / upload UI — content still managed via `src/data/resources.ts`.
