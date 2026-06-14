@@ -56,10 +56,10 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                Our generation is the most resourced in history — and yet most of us are still circling the same issues, stuck in the same patterns, unsure of who we are or why we're here.
+                An emerging generation is the most resourced in history — and yet most of are still circling the same issues, stuck in the same patterns, unsure of who we are or why we're here.
               </p>
               <p>
-                The Way isn't another conference to shove more information in your head. It's built around one desire: to see a generation discover what discipleship looks like when it works and to actually make the journey.
+                The Way isn't another conference to shove more information in your head. It's built around one desire: to see a generation move through formation and into mission.
               </p>
               <p>
                 Join us as we move together through four stages — Deliverance, Transformation, Rulership, and Mission — and by the end of the weekend, you'll have a framework for the rest of your life.
