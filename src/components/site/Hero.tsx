@@ -18,15 +18,6 @@ export function Hero() {
 
 
 
-      {/* Centered video placeholder marker */}
-      <div className="absolute inset-0 hidden lg:flex items-center justify-end pr-24 xl:pr-40 pointer-events-none">
-        <div className="flex flex-col items-center gap-3 opacity-40">
-          <div className="w-20 h-20 rounded-full border border-cream/40 flex items-center justify-center">
-            <Play size={26} className="text-cream/60 ml-1" />
-          </div>
-          <div className="eyebrow !text-cream/40">Background Video</div>
-        </div>
-      </div>
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
         <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
