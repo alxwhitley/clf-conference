@@ -21,8 +21,8 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
         <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
-        <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[170px] mt-6 leading-[0.88] uppercase">
-          The Way<br /><span className="text-[0.32em] tracking-[0.28em] text-cream/80 font-sans font-semibold">Conference</span>
+        <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[170px] mt-6 leading-[0.88]">
+          The Way<br /><span className="text-[0.55em] text-cream/85">Conference</span>
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cream/70 leading-relaxed">
           A 3-day conference to see an emerging generation move through formation and into mission.

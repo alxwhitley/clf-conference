@@ -31,7 +31,7 @@
   --color-ring: var(--gold);
   --color-popover: var(--cream);
   --color-popover-foreground: var(--dark);
-  --font-display: "Bodoni Moda", "Playfair Display", "Times New Roman", serif;
+  --font-display: "DM Serif Display", "Playfair Display", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --color-copper-frame: var(--copper-frame);
 }
@@ -84,10 +84,9 @@
 
 @utility font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
-  line-height: 0.92;
-  font-weight: 800;
-  font-stretch: 100%;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  font-weight: 400;
 }
 
 @utility candlelit {
