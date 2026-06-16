@@ -103,7 +103,7 @@ function Home() {
                 <p className="mt-3 text-sm md:text-base text-dark/70 leading-relaxed">
                   {step.body}
                 </p>
-                <p className="mt-3 text-sm md:text-base text-gold font-semibold leading-relaxed">
+                <p className="mt-3 text-sm md:text-base text-copper-frame font-semibold leading-relaxed">
                   {step.close}
                 </p>
               </div>
