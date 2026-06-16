@@ -40,7 +40,7 @@ function LockedState() {
     <section className="min-h-screen bg-dark text-cream grain flex items-center justify-center px-5 md:px-10 py-32 text-center">
       <div className="max-w-2xl">
         <Eyebrow>Available October 17</Eyebrow>
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider mt-6">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mt-6">
           RESOURCES DROP WHEN THE CONFERENCE BEGINS.
         </h1>
         <p className="mt-8 text-base md:text-lg text-cream/60 leading-relaxed">
@@ -71,7 +71,7 @@ function UnlockedState() {
       <section className="bg-dark text-cream py-16 md:py-24 border-b border-cream/10">
         <div className="mx-auto max-w-[1100px] px-5 md:px-10">
           <Eyebrow>Main Sessions</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4">
+          <h2 className="font-display text-4xl md:text-6xl mt-4">
             Every main session.
           </h2>
           <div className="mt-10 space-y-4">
@@ -88,7 +88,7 @@ function UnlockedState() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
             <div>
               <Eyebrow>Breakouts</Eyebrow>
-              <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4">
+              <h2 className="font-display text-4xl md:text-6xl mt-4">
                 Breakout sessions.
               </h2>
             </div>
@@ -118,7 +118,7 @@ function ResourceCard({ session }: { session: Session }) {
       >
         <div>
           <div className="eyebrow !text-cream/40">{session.day} · {session.time}</div>
-          <h3 className="font-display text-xl md:text-2xl tracking-wider text-cream mt-2">
+          <h3 className="font-display text-xl md:text-2xl text-cream mt-2">
             {session.title}
           </h3>
         </div>
@@ -159,7 +159,7 @@ function ResourceCard({ session }: { session: Session }) {
                   href={resource.notesUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none"
                 >
                   <FileText size={14} /> Download Notes
                 </a>
@@ -169,7 +169,7 @@ function ResourceCard({ session }: { session: Session }) {
                   href={resource.slidesUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 border border-cream/30 text-cream text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] hover:bg-cream/5"
+                  className="flex-1 inline-flex items-center justify-center gap-2 min-h-[44px] px-5 border border-cream/30 text-cream text-[11px] font-bold uppercase tracking-[0.22em] rounded-none hover:bg-cream/5"
                 >
                   <Download size={14} /> Download Slides
                 </a>

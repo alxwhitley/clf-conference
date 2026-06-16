@@ -22,7 +22,7 @@ export function TrackToggle({
   return (
     <div
       className={cn(
-        "inline-flex w-full sm:w-auto rounded-[2px] border border-cream/20 bg-dark/30 p-1",
+        "inline-flex w-full sm:w-auto rounded-none border border-cream/20 bg-dark/30 p-1",
         className,
       )}
       role="tablist"
@@ -38,7 +38,7 @@ export function TrackToggle({
             aria-selected={isActive}
             onClick={() => setActive(o.key)}
             className={cn(
-              "flex-1 sm:flex-none min-h-[44px] px-5 text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] transition-colors",
+              "flex-1 sm:flex-none min-h-[44px] px-5 text-[11px] font-bold uppercase tracking-[0.22em] rounded-none transition-colors",
               isActive
                 ? "bg-gold text-dark"
                 : "text-cream/60 hover:text-cream",

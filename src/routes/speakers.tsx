@@ -60,7 +60,7 @@ function SpeakerCard({ speaker }: { speaker: Speaker }) {
         />
       </div>
       <div className="p-5 md:p-6 flex-1 flex flex-col">
-        <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark">
+        <h3 className="font-display text-2xl md:text-3xl text-dark">
           {speaker.name}
         </h3>
         {(speaker.title || speaker.church) && (
@@ -97,7 +97,7 @@ function RoleBadge({ role }: { role: Speaker["roles"][number] }) {
   return (
     <span
       className={cn(
-        "px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.22em] rounded-[2px]",
+        "px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.22em] rounded-none",
         cls,
       )}
     >

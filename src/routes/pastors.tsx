@@ -47,7 +47,7 @@ function PastorsPage() {
         />
         <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10">
           <Eyebrow>For Pastors & Senior Leaders</Eyebrow>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mt-4 tracking-wider">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mt-4">
             A TRACK BUILT FOR THOSE WHO LEAD.
           </h1>
           <p className="mt-6 max-w-2xl text-base md:text-lg text-cream/70 leading-relaxed">
@@ -58,7 +58,7 @@ function PastorsPage() {
           <div className="mt-10">
             <a
               href={siteConfig.registrationUrlPastors}
-              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] hover:opacity-90"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none hover:opacity-90"
             >
               Register as a Pastor or Leader
             </a>
@@ -70,7 +70,7 @@ function PastorsPage() {
       <section className="bg-cream py-16 md:py-24">
         <div className="mx-auto max-w-[1100px] px-5 md:px-10">
           <Eyebrow>The Schedule</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4 text-dark">
+          <h2 className="font-display text-4xl md:text-6xl mt-4 text-dark">
             Four days. Together.
           </h2>
 
@@ -82,7 +82,7 @@ function PastorsPage() {
               return (
                 <div key={d}>
                   <div className="flex items-baseline justify-between mb-4 pb-3 border-b-2 border-dark">
-                    <h3 className="font-display text-3xl md:text-4xl tracking-wider text-dark">
+                    <h3 className="font-display text-3xl md:text-4xl text-dark">
                       {dayLabels[d].long}
                     </h3>
                     <div className="eyebrow !text-text-muted">{dayLabels[d].date}</div>
@@ -103,7 +103,7 @@ function PastorsPage() {
       <section className="bg-dark-warm text-cream py-16 md:py-24">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
           <Eyebrow>Who You'll Hear</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4">
+          <h2 className="font-display text-4xl md:text-6xl mt-4">
             Speakers for the pastors track.
           </h2>
 
@@ -122,7 +122,7 @@ function PastorsPage() {
                   />
                 </div>
                 <div className="p-5 md:p-6">
-                  <h3 className="font-display text-2xl tracking-wider text-cream">
+                  <h3 className="font-display text-2xl text-cream">
                     {s.name}
                   </h3>
                   {(s.title || s.church) && (
@@ -141,7 +141,7 @@ function PastorsPage() {
       <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-[900px] px-5 md:px-10 text-center">
           <Eyebrow className="inline-block">Ready to join us?</Eyebrow>
-          <h2 className="font-display text-4xl md:text-6xl tracking-wider mt-4 text-dark">
+          <h2 className="font-display text-4xl md:text-6xl mt-4 text-dark">
             Register for the pastors track.
           </h2>
           <p className="mt-6 max-w-xl mx-auto text-text-muted leading-relaxed">
@@ -151,7 +151,7 @@ function PastorsPage() {
           <div className="mt-10">
             <a
               href={siteConfig.registrationUrlPastors}
-              className="inline-flex items-center justify-center min-h-[44px] px-8 bg-dark text-cream text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] hover:bg-dark-warm"
+              className="inline-flex items-center justify-center min-h-[44px] px-8 bg-dark text-cream text-[11px] font-bold uppercase tracking-[0.22em] rounded-none hover:bg-dark-warm"
             >
               Register Now
             </a>
@@ -178,7 +178,7 @@ function PastorsSessionCard({ session }: { session: Session }) {
           </span>
         )}
       </div>
-      <h4 className="font-display text-2xl tracking-wider text-dark mt-2">
+      <h4 className="font-display text-2xl text-dark mt-2">
         {session.title}
       </h4>
       {session.description && (

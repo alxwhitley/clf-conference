@@ -31,7 +31,7 @@ export function BreakoutAccordion({
         </div>
         <div
           className={cn(
-            "font-display text-xl md:text-2xl tracking-wider",
+            "font-display text-xl md:text-2xl",
             dark ? "text-cream" : "text-dark",
           )}
         >
@@ -80,7 +80,7 @@ export function BreakoutAccordion({
                   <div>
                     <h4
                       className={cn(
-                        "font-display text-xl md:text-2xl tracking-wider",
+                        "font-display text-xl md:text-2xl",
                         dark ? "text-cream" : "text-dark",
                       )}
                     >

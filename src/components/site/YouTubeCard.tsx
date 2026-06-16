@@ -46,7 +46,7 @@ export function YouTubeCard({
       </div>
       <div className="pt-4">
         <div className="eyebrow !text-cream/40">{day}</div>
-        <h3 className="font-display text-xl md:text-2xl tracking-wider text-cream mt-2 group-hover:text-gold transition-colors">
+        <h3 className="font-display text-xl md:text-2xl text-cream mt-2 group-hover:text-gold transition-colors">
           {title}
         </h3>
         <div className="text-sm text-cream/60 mt-1">{speaker}</div>

@@ -60,7 +60,7 @@ export function SiteNav() {
           to="/"
           search={trackSearch}
           className={cn(
-            "font-display text-2xl md:text-3xl tracking-wider text-center md:text-left md:col-start-1 md:row-start-1",
+            "font-display text-2xl md:text-3xl text-center md:text-left md:col-start-1 md:row-start-1",
             solid ? "text-dark" : "text-cream",
           )}
         >
@@ -88,7 +88,7 @@ export function SiteNav() {
         {/* Register: right */}
         <a
           href={registerHref}
-          className="inline-flex items-center justify-center min-h-[44px] px-4 md:px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] hover:opacity-90"
+          className="inline-flex items-center justify-center min-h-[44px] px-4 md:px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none hover:opacity-90"
         >
           Register
         </a>
@@ -111,7 +111,7 @@ export function SiteNav() {
             <a
               href={registerHref}
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center min-h-[44px] px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+              className="mt-4 inline-flex items-center justify-center min-h-[44px] px-5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none"
             >
               Register
             </a>

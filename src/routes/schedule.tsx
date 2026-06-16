@@ -103,7 +103,7 @@ function SchedulePage() {
               key={d}
               onClick={() => handleJump(d)}
               className={cn(
-                "min-h-[44px] px-4 text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] border transition-colors whitespace-nowrap",
+                "min-h-[44px] px-4 text-[11px] font-bold uppercase tracking-[0.22em] rounded-none border transition-colors whitespace-nowrap",
                 activeDay === d
                   ? "bg-dark text-cream border-dark"
                   : "border-border text-text-muted hover:text-dark hover:border-dark",
@@ -125,7 +125,7 @@ function SchedulePage() {
                   key={d}
                   onClick={() => handleJump(d)}
                   className={cn(
-                    "min-h-[44px] px-4 text-left text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] border transition-colors",
+                    "min-h-[44px] px-4 text-left text-[11px] font-bold uppercase tracking-[0.22em] rounded-none border transition-colors",
                     activeDay === d
                       ? "bg-dark text-cream border-dark"
                       : "border-border text-text-muted hover:text-dark hover:border-dark",
@@ -153,7 +153,7 @@ function SchedulePage() {
                   style={{ scrollMarginTop: "180px" }}
                 >
                   <div className="flex items-baseline justify-between mb-6 pb-4 border-b-2 border-dark">
-                    <h2 className="font-display text-4xl md:text-5xl tracking-wider text-dark">
+                    <h2 className="font-display text-4xl md:text-5xl text-dark">
                       {dayLabels[d].long}
                     </h2>
                     <div className="eyebrow !text-text-muted">{dayLabels[d].date}</div>
@@ -195,7 +195,7 @@ function SessionCard({ session }: { session: Session; track: Track }) {
           </span>
         )}
       </div>
-      <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-2">
+      <h3 className="font-display text-2xl md:text-3xl text-dark mt-2">
         {session.title}
       </h3>
       {session.description && (

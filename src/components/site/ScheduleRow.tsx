@@ -26,7 +26,7 @@ export function ScheduleRow({
     >
       <div className={`eyebrow ${dayColor}`}>{day}</div>
       <div>
-        <div className={`font-display text-xl md:text-2xl tracking-wider ${titleColor}`}>
+        <div className={`font-display text-xl md:text-2xl ${titleColor}`}>
           {title}
         </div>
         {location && (
