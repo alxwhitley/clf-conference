@@ -8,13 +8,14 @@ export function Hero() {
       {/* Background video placeholder */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-60"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 40%, rgba(196,154,58,0.18), transparent 55%), radial-gradient(circle at 20% 80%, rgba(196,154,58,0.08), transparent 60%)",
+              "radial-gradient(circle at 65% 45%, rgba(220,140,55,0.28), transparent 55%), radial-gradient(circle at 20% 80%, rgba(160,103,58,0.18), transparent 60%)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/85 to-dark/50" />
+        <div className="absolute inset-3 md:inset-5 border border-copper-frame/40 pointer-events-none" />
       </div>
 
       {/* Centered video placeholder marker */}
@@ -29,7 +30,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
         <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
-        <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[160px] mt-6 leading-[0.85] uppercase">
+        <h1 className="font-display text-[72px] sm:text-[96px] md:text-[120px] lg:text-[140px] mt-6 leading-[0.92] uppercase">
           The Way<br />Conference
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cream/70 leading-relaxed">
