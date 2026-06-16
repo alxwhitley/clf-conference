@@ -165,7 +165,7 @@ function Home() {
       </section>
 
       {/* Schedule teaser */}
-      <section className="bg-dark-warm text-cream py-24 md:py-32">
+      <section className="bg-dark-warm text-cream candlelit py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-10 md:mb-12">
             <div>
@@ -173,7 +173,7 @@ function Home() {
             </div>
             <div>
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl">
-                THE<br />SCHEDULE
+                The<br />Schedule
               </h2>
             </div>
           </div>
