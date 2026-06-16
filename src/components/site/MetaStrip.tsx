@@ -1,5 +1,5 @@
 const items = [
-  { label: "When", value: "Oct 17–19" },
+  { label: "When", value: "Oct 16–18" },
   { label: "Where", value: "Raleigh NC" },
   { label: "Who", value: "Ages 18–30" },
   { label: "Sessions", value: "12 Total" },
