@@ -3,11 +3,11 @@ import { Instagram, Youtube, Twitter } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-dark text-cream">
+    <footer className="bg-dark text-cream border-t border-copper-frame">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           <div>
-            <div className="font-display text-4xl md:text-5xl uppercase">Way Conference</div>
+            <div className="font-display text-4xl md:text-5xl">Way Conference</div>
             <p className="mt-4 text-sm text-cream/60 max-w-sm leading-relaxed">
               A young adults gathering. Raleigh, NC. October 16–18, 2026.
             </p>
