@@ -31,8 +31,9 @@
   --color-ring: var(--gold);
   --color-popover: var(--cream);
   --color-popover-foreground: var(--dark);
-  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-display: "DM Serif Display", "Playfair Display", "Times New Roman", serif;
   --font-sans: "Inter", system-ui, sans-serif;
+  --color-copper-frame: var(--copper-frame);
 }
 
 :root {
