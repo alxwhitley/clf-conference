@@ -42,7 +42,7 @@ export function SiteNav() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
-        solid ? "bg-cream border-b border-border" : "bg-transparent",
+        solid ? "bg-cream border-b border-copper-frame/60" : "bg-transparent",
       )}
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-10 h-16 md:h-20 grid grid-cols-[auto_1fr_auto] md:grid-cols-[auto_1fr_auto] items-center gap-4">
