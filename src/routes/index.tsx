@@ -142,7 +142,7 @@ function Home() {
             </div>
             <div>
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
-                THE<br />SPEAKERS
+                The<br />Speakers
               </h2>
             </div>
           </div>
