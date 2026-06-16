@@ -117,15 +117,15 @@ function Home() {
       </section>
 
       {/* Pastors on-ramp */}
-      <section className="bg-dark text-cream border-b border-copper-frame candlelit py-16 md:py-20">
-        <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-center">
+      <section className="bg-dark text-cream border-b border-copper-frame candlelit py-20 md:py-28">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid gap-8 md:gap-12 md:grid-cols-[auto_1fr_auto] md:items-center">
           <div>
             <Eyebrow>For Pastors & Leaders</Eyebrow>
           </div>
-          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
-            <p className="text-base md:text-lg text-cream/80 leading-relaxed max-w-xl">
-              Leading a church or ministry? The Way runs a dedicated track for pastors and international leaders — built around the same four stages, made for those who carry others.
-            </p>
+          <p className="text-base md:text-lg text-cream/80 leading-relaxed max-w-2xl">
+            Leading a church or ministry? The Way runs a dedicated track for pastors and international leaders — built around the same four stages, made for those who carry others.
+          </p>
+          <div className="md:justify-self-end">
             <SiteLinkButton variant="ghost-light" to="/pastors">
               For Pastors & Leaders →
             </SiteLinkButton>
@@ -134,7 +134,7 @@ function Home() {
       </section>
 
       {/* Speakers */}
-      <section className="bg-cream pb-24 md:pb-32">
+      <section className="bg-cream py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-12 md:mb-16">
             <div>
