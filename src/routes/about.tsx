@@ -24,7 +24,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const subheadCls =
-  "font-display tracking-wider text-[clamp(2rem,6vw,3.5rem)]";
+  "font-display text-[clamp(2rem,6vw,3.5rem)]";
 const bodyCls = "text-base md:text-lg leading-[1.7]";
 
 function AboutPage() {
@@ -41,7 +41,7 @@ function AboutPage() {
         />
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-10">
           <Eyebrow>RALEIGH, NC — OCT 17–19</Eyebrow>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl mt-6 tracking-wider max-w-5xl">
+          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl mt-6 max-w-5xl">
             WHY THE WAY EXISTS.
           </h1>
         </div>
@@ -166,7 +166,7 @@ function AboutPage() {
           </div>
 
           <div className="mt-16 md:mt-24 text-center">
-            <p className="font-display tracking-wider text-[clamp(2.25rem,7vw,4.5rem)] max-w-4xl mx-auto">
+            <p className="font-display text-[clamp(2.25rem,7vw,4.5rem)] max-w-4xl mx-auto">
               THE WAY IS NOT ANOTHER CONFERENCE.
             </p>
             <p className="mt-6 text-base md:text-lg text-text-muted max-w-2xl mx-auto leading-[1.7]">
@@ -181,7 +181,7 @@ function AboutPage() {
       <section className="bg-dark-warm text-cream grain py-20 md:py-32">
         <div className="relative z-10 mx-auto max-w-3xl px-6 md:px-10 text-center">
           <Eyebrow>OCT 17–19 · RALEIGH, NC</Eyebrow>
-          <h2 className="font-display tracking-wider text-[clamp(2.5rem,8vw,5rem)] mt-6">
+          <h2 className="font-display text-[clamp(2.5rem,8vw,5rem)] mt-6">
             DON'T MISS WHAT GOD IS DOING.
           </h2>
           <div className="mt-10 flex flex-col md:flex-row gap-4 md:gap-5 md:justify-center">

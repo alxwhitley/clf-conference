@@ -20,7 +20,7 @@ export function PageHero({
       />
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10">
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl mt-4 tracking-wider">
+        <h1 className="font-display text-6xl md:text-8xl lg:text-9xl mt-4">
           {title}
         </h1>
         {subtitle && (

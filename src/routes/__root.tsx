@@ -19,14 +19,14 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-cream px-4">
       <div className="max-w-md text-center">
         <div className="eyebrow">Lost in the wave</div>
-        <h1 className="font-display text-7xl md:text-8xl text-dark mt-4 tracking-wider">404</h1>
+        <h1 className="font-display text-7xl md:text-8xl text-dark mt-4">404</h1>
         <p className="mt-4 text-sm text-text-muted">
           That page doesn't exist. Let's get you home.
         </p>
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-6 py-3.5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+            className="inline-flex items-center justify-center px-6 py-3.5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none"
           >
             Go Home
           </Link>
@@ -47,7 +47,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-cream px-4">
       <div className="max-w-md text-center">
         <div className="eyebrow">Something broke</div>
-        <h1 className="font-display text-5xl md:text-6xl text-dark mt-4 tracking-wider">
+        <h1 className="font-display text-5xl md:text-6xl text-dark mt-4">
           This page didn't load
         </h1>
         <p className="mt-4 text-sm text-text-muted">
@@ -59,13 +59,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center px-6 py-3.5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+            className="inline-flex items-center justify-center px-6 py-3.5 bg-gold text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none"
           >
             Try Again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center px-6 py-3.5 border border-dark text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px]"
+            className="inline-flex items-center justify-center px-6 py-3.5 border border-dark text-dark text-[11px] font-bold uppercase tracking-[0.22em] rounded-none"
           >
             Go Home
           </a>

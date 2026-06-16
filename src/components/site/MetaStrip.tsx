@@ -19,7 +19,7 @@ export function MetaStrip() {
             }`}
           >
             <div className="eyebrow !text-cream/40">{it.label}</div>
-            <div className="font-display text-3xl md:text-4xl mt-3 tracking-wider">
+            <div className="font-display text-3xl md:text-4xl mt-3">
               {it.value}
             </div>
           </div>

@@ -51,8 +51,8 @@ function Home() {
             <Eyebrow>What Is The Way</Eyebrow>
           </div>
           <div>
-            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
-              NOT ANOTHER<br />CONFERENCE.
+            <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
+              Not another<br />conference.
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
@@ -77,8 +77,8 @@ function Home() {
               <Eyebrow>The Way Forward</Eyebrow>
             </div>
             <div>
-              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
-                A JOURNEY BACK TO WHO YOU WERE MADE TO BE.
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
+                A journey back to who you were made to be.
               </h2>
               <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
                 The weekend is structured around four essential stages of the formation process.
@@ -94,16 +94,16 @@ function Home() {
               { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we'd advance the gospel into the world.", close: "We must be sent." },
             ].map((step) => (
               <div key={step.n} className="border-t border-dark/20 pt-5">
-                <div className="font-display text-5xl md:text-6xl tracking-wider text-gold leading-none">
+                <div className="font-display text-5xl md:text-6xl text-gold leading-none">
                   {step.n}
                 </div>
-                <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark mt-4">
+                <h3 className="font-display text-2xl md:text-3xl text-dark mt-4">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-sm md:text-base text-dark/70 leading-relaxed">
                   {step.body}
                 </p>
-                <p className="mt-3 text-sm md:text-base text-gold font-semibold leading-relaxed">
+                <p className="mt-3 text-sm md:text-base text-copper-frame font-semibold leading-relaxed">
                   {step.close}
                 </p>
               </div>
@@ -117,7 +117,7 @@ function Home() {
       </section>
 
       {/* Pastors on-ramp */}
-      <section className="bg-dark text-cream border-b-2 border-gold py-16 md:py-20">
+      <section className="bg-dark text-cream border-b border-copper-frame candlelit py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-center">
           <div>
             <Eyebrow>For Pastors & Leaders</Eyebrow>
@@ -141,8 +141,8 @@ function Home() {
               <Eyebrow>Who's Speaking</Eyebrow>
             </div>
             <div>
-              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider text-dark">
-                THE<br />SPEAKERS
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
+                The<br />Speakers
               </h2>
             </div>
           </div>
@@ -165,15 +165,15 @@ function Home() {
       </section>
 
       {/* Schedule teaser */}
-      <section className="bg-dark-warm text-cream py-24 md:py-32">
+      <section className="bg-dark-warm text-cream candlelit py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10">
           <div className="grid md:grid-cols-[1fr_1.4fr] gap-12 mb-10 md:mb-12">
             <div>
               <Eyebrow>What's Happening</Eyebrow>
             </div>
             <div>
-              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl tracking-wider">
-                THE<br />SCHEDULE
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl">
+                The<br />Schedule
               </h2>
             </div>
           </div>
@@ -194,7 +194,7 @@ function Home() {
                     {dayLabels[s.day].short} · {s.time}
                   </div>
                   <div>
-                    <div className="font-display text-xl md:text-2xl tracking-wider text-cream">
+                    <div className="font-display text-xl md:text-2xl text-cream">
                       {opt?.title ?? s.title}
                     </div>
                     {opt?.speaker && (
@@ -210,7 +210,7 @@ function Home() {
             <Link
               to="/schedule"
               search={{ track }}
-              className="inline-flex items-center justify-center px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.22em] rounded-[2px] bg-transparent text-cream border border-cream/70 hover:bg-cream hover:text-dark transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.22em] rounded-none bg-transparent text-cream border border-cream/70 hover:bg-cream hover:text-dark transition-colors"
             >
               See Full Schedule
             </Link>
@@ -222,7 +222,7 @@ function Home() {
       <section id="register" className="bg-cream py-24 md:py-40">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 text-center">
           <Eyebrow className="inline-block">Three Days. One Desire.</Eyebrow>
-          <h2 className="font-display text-6xl md:text-8xl lg:text-[140px] tracking-wider text-dark mt-6">
+          <h2 className="font-display text-6xl md:text-8xl lg:text-[140px] text-dark mt-6">
             Restoring a generation to their identity so they can step boldly into their purpose.
           </h2>
           <p className="mt-6 max-w-md mx-auto text-base text-text-muted leading-relaxed">

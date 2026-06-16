@@ -15,7 +15,7 @@ const styles: Record<Variant, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.22em] transition-colors rounded-[2px] whitespace-nowrap";
+  "inline-flex items-center justify-center px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.22em] transition-colors rounded-none whitespace-nowrap";
 
 export function SiteButton({
   variant = "primary",

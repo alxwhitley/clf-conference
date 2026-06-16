@@ -17,7 +17,7 @@ export function SpeakerCard({
         <div className="absolute bottom-3 left-4 eyebrow !text-dark/30">Photo</div>
       </div>
       <div className="p-5 md:p-6">
-        <h3 className="font-display text-2xl md:text-3xl tracking-wider text-dark">
+        <h3 className="font-display text-2xl md:text-3xl text-dark">
           {speaker.name}
         </h3>
         <div className="eyebrow mt-2">{speaker.ministry}</div>
