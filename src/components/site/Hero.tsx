@@ -1,32 +1,23 @@
-import { Play } from "lucide-react";
 import { SiteLinkButton } from "./Button";
 import { Eyebrow } from "./Eyebrow";
+import heroImage from "@/assets/hero-worship.jpg.asset.json";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen w-full bg-dark text-cream overflow-hidden grain candlelit">
-      {/* Background video placeholder */}
+    <section className="relative min-h-screen w-full bg-dark text-cream overflow-hidden grain">
+      {/* Background image */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 opacity-70"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 65% 40%, rgba(230,150,60,0.32), transparent 55%), radial-gradient(circle at 18% 85%, rgba(160,103,58,0.22), transparent 60%)",
-          }}
+        <img
+          src={heroImage.url}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
-        <div className="absolute inset-3 md:inset-5 border border-copper-frame/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/70 to-dark/30" />
+        <div className="absolute inset-0 bg-dark/30" />
       </div>
 
-      {/* Centered video placeholder marker */}
-      <div className="absolute inset-0 hidden lg:flex items-center justify-end pr-24 xl:pr-40 pointer-events-none">
-        <div className="flex flex-col items-center gap-3 opacity-40">
-          <div className="w-20 h-20 rounded-full border border-cream/40 flex items-center justify-center">
-            <Play size={26} className="text-cream/60 ml-1" />
-          </div>
-          <div className="eyebrow !text-cream/40">Background Video</div>
-        </div>
-      </div>
+
+
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
         <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
