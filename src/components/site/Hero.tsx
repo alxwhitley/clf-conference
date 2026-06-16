@@ -30,7 +30,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
         <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
-        <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[160px] mt-6 leading-[0.85] uppercase">
+        <h1 className="font-display text-[72px] sm:text-[96px] md:text-[120px] lg:text-[140px] mt-6 leading-[0.92] uppercase">
           The Way<br />Conference
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cream/70 leading-relaxed">
