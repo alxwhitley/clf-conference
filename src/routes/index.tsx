@@ -117,7 +117,7 @@ function Home() {
       </section>
 
       {/* Pastors on-ramp */}
-      <section className="bg-dark text-cream border-b-2 border-gold py-16 md:py-20">
+      <section className="bg-dark text-cream border-b border-copper-frame candlelit py-16 md:py-20">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-center">
           <div>
             <Eyebrow>For Pastors & Leaders</Eyebrow>
