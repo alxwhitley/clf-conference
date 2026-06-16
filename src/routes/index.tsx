@@ -52,7 +52,7 @@ function Home() {
           </div>
           <div>
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
-              NOT ANOTHER<br />CONFERENCE.
+              Not another<br />conference.
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
