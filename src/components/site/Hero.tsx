@@ -8,13 +8,14 @@ export function Hero() {
       {/* Background video placeholder */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-60"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 40%, rgba(196,154,58,0.18), transparent 55%), radial-gradient(circle at 20% 80%, rgba(196,154,58,0.08), transparent 60%)",
+              "radial-gradient(circle at 65% 45%, rgba(220,140,55,0.28), transparent 55%), radial-gradient(circle at 20% 80%, rgba(160,103,58,0.18), transparent 60%)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-dark/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/85 to-dark/50" />
+        <div className="absolute inset-3 md:inset-5 border border-copper-frame/40 pointer-events-none" />
       </div>
 
       {/* Centered video placeholder marker */}
