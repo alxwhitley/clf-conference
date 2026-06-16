@@ -14,17 +14,17 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Way — A Young Adults Gathering | Oct 17–19, Raleigh NC" },
+      { title: "The Way — A Young Adults Gathering | Oct 16–18, Raleigh NC" },
       {
         name: "description",
         content:
-          "Bringing the Next Generation into Restore. Oct 17–19, 2025 in Raleigh, NC.",
+          "A three-day gathering for young adults in Raleigh, NC. October 16–18, 2026.",
       },
       { property: "og:title", content: "The Way — A Young Adults Gathering" },
       {
         property: "og:description",
         content:
-          "THREE DAYS. ONE DESIRE. The Way is a young adults conference in Raleigh, NC. October 17–19, 2025.",
+          "THREE DAYS. ONE DESIRE. The Way is a young adults conference in Raleigh, NC. October 16–18, 2026.",
       },
     ],
   }),
@@ -56,25 +56,14 @@ function Home() {
             </h2>
             <div className="mt-8 max-w-2xl space-y-5 text-base md:text-lg text-dark/70 leading-relaxed">
               <p>
-                An emerging generation is the most resourced in history — and yet most of are still circling the same issues, stuck in the same patterns, unsure of who we are or why we're here.
+                Every month, 500+ young adults pack a room through After Hours — hungry, showing up, responding to what God is doing. The question that keeps surfacing is the only one that matters: what comes next?
               </p>
               <p>
-                The Way isn't another conference to shove more information in your head. It's built around one desire: to see a generation move through formation and into mission.
+                The church has never been more resourced — and yet a generation is still circling the same issues, unsure of who they are or why they're here. Something is missing. It's not more information. It's formation.
               </p>
               <p>
-                Join us as we move together through four stages — Deliverance, Transformation, Rulership, and Mission — and by the end of the weekend, you'll have a framework for the rest of your life.
+                The Way isn't built to shove more into your head. It's built to move you through four stages that actually work — Deliverance, Transformation, Rulership, and Mission. It exists to move a generation through formation and into mission.
               </p>
-            </div>
-
-            <div className="mt-12 grid grid-cols-2 gap-6 max-w-md">
-              <div className="border-t border-border pt-4">
-                <div className="font-display text-4xl md:text-5xl tracking-wider text-dark">400+</div>
-                <div className="eyebrow !text-text-muted mt-2">Expected Attendees</div>
-              </div>
-              <div className="border-t border-border pt-4">
-                <div className="font-display text-4xl md:text-5xl tracking-wider text-dark">18–30</div>
-                <div className="eyebrow !text-text-muted mt-2">The Generation</div>
-              </div>
             </div>
           </div>
         </div>
@@ -92,17 +81,17 @@ function Home() {
                 A JOURNEY BACK TO WHO YOU WERE MADE TO BE.
               </h2>
               <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
-                The weekend is structured around four essential stages of the discipleship journey.&nbsp;
+                The weekend is structured around four essential stages of the formation process.
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-5">
             {[
-              { n: "01", title: "Deliverance", body: "Most believers are circling the same issues thinking that more information or trying harder will break them out of it. " },
-              { n: "02", title: "Transformation", body: "Most believers get free in a moment but never walk through the process that makes freedom last. " },
-              { n: "03", title: "Rulership", body: "Real transformation produces rulers — people who carry God's authority into their homes, work, and world. " },
-              { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we would advance the gospel into the world." },
+              { n: "01", title: "Deliverance", body: "Most believers are circling the same issues, thinking more information or trying harder will break them out.", close: "We must be set free before we can go anywhere." },
+              { n: "02", title: "Transformation", body: "Most believers get free in a moment but never walk through the process that makes freedom last.", close: "We must let freedom become who we are." },
+              { n: "03", title: "Rulership", body: "Real transformation produces rulers — people who carry God's authority into their homes, work, and world.", close: "We must take up the authority we were given." },
+              { n: "04", title: "Mission", body: "It was never about our freedom alone — but the unique way we'd advance the gospel into the world.", close: "We must be sent." },
             ].map((step) => (
               <div key={step.n} className="border-t border-dark/20 pt-5">
                 <div className="font-display text-5xl md:text-6xl tracking-wider text-gold leading-none">
@@ -114,8 +103,32 @@ function Home() {
                 <p className="mt-3 text-sm md:text-base text-dark/70 leading-relaxed">
                   {step.body}
                 </p>
+                <p className="mt-3 text-sm md:text-base text-gold font-semibold leading-relaxed">
+                  {step.close}
+                </p>
               </div>
             ))}
+          </div>
+
+          <p className="mt-12 md:mt-16 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
+            What you'll leave with isn't just a weekend experience. It's a framework you'll carry for the rest of your life.
+          </p>
+        </div>
+      </section>
+
+      {/* Pastors on-ramp */}
+      <section className="bg-dark text-cream border-b-2 border-gold py-16 md:py-20">
+        <div className="mx-auto max-w-[1400px] px-5 md:px-10 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-center">
+          <div>
+            <Eyebrow>For Pastors & Leaders</Eyebrow>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+            <p className="text-base md:text-lg text-cream/80 leading-relaxed max-w-xl">
+              Leading a church or ministry? The Way runs a dedicated track for pastors and international leaders — built around the same four stages, made for those who carry others.
+            </p>
+            <SiteLinkButton variant="ghost-light" to="/pastors">
+              For Pastors & Leaders →
+            </SiteLinkButton>
           </div>
         </div>
       </section>
@@ -208,9 +221,9 @@ function Home() {
       {/* Register CTA */}
       <section id="register" className="bg-cream py-24 md:py-40">
         <div className="mx-auto max-w-[1400px] px-5 md:px-10 text-center">
-          <Eyebrow className="inline-block">THREE DAYS. ONE DESIRE.</Eyebrow>
+          <Eyebrow className="inline-block">Three Days. One Desire.</Eyebrow>
           <h2 className="font-display text-6xl md:text-8xl lg:text-[140px] tracking-wider text-dark mt-6">
-            Don't miss what god is doing in this generation.
+            Restoring a generation to their identity so they can step boldly into their purpose.
           </h2>
           <p className="mt-6 max-w-md mx-auto text-base text-text-muted leading-relaxed">
             Early registration is open. Bring your friends. Bring your hunger.
