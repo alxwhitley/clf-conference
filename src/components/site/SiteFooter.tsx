@@ -9,7 +9,7 @@ export function SiteFooter() {
           <div>
             <div className="font-display text-4xl md:text-5xl tracking-wider uppercase">Way Conference</div>
             <p className="mt-4 text-sm text-cream/60 max-w-sm leading-relaxed">
-              A young adults gathering. Raleigh, NC. October 17–19, 2025.
+              A young adults gathering. Raleigh, NC. October 16–18, 2026.
             </p>
             <div className="flex items-center gap-4 mt-6 text-cream/60">
               <a href="#" aria-label="Instagram" className="hover:text-gold transition-colors">
@@ -43,7 +43,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-cream/40">
-          <div>© 2025 The Way Conference. A gathering of CLF Church.</div>
+          <div>© 2026 The Way Conference. A gathering of CLF Church.</div>
           <div>Made with intention in Raleigh.</div>
         </div>
       </div>

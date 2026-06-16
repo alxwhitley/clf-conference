@@ -28,15 +28,12 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-5 md:px-10 pt-40 md:pt-56 pb-20">
-        <Eyebrow>Raleigh, NC — Oct 17–19</Eyebrow>
+        <Eyebrow>Raleigh, NC — Oct 16–18</Eyebrow>
         <h1 className="font-display text-[80px] sm:text-[110px] md:text-[140px] lg:text-[160px] mt-6 leading-[0.85] uppercase">
-          Way<br />Conference
+          The Way<br />Conference
         </h1>
         <p className="mt-8 max-w-xl text-base md:text-lg text-cream/70 leading-relaxed">
-          Most of us have never seen discipleship actually work. The Way is built to change that.
-        </p>
-        <p className="mt-6 max-w-md text-sm md:text-base text-cream/50 leading-relaxed">
-          A three-day conference for young adults ages 18–30.
+          A 3-day conference to see an emerging generation move through formation and into mission.
         </p>
         <div className="flex flex-wrap gap-3 mt-10">
           <SiteLinkButton variant="primary" href="#register">

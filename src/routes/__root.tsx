@@ -84,15 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "The Way is a three-day young adults gathering in Raleigh, NC. October 17–19, 2025. Hosted by CLF Church.",
+          "A three-day gathering for young adults in Raleigh, NC. October 16–18, 2026.",
       },
       { name: "author", content: "CLF Church" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "The Way — A Young Adults Gathering" },
       { name: "twitter:title", content: "The Way — A Young Adults Gathering" },
-      { name: "description", content: "The Way Ignition is a conference website for young adults and senior leaders, featuring event details and registration." },
-      { property: "og:description", content: "The Way Ignition is a conference website for young adults and senior leaders, featuring event details and registration." },
-      { name: "twitter:description", content: "The Way Ignition is a conference website for young adults and senior leaders, featuring event details and registration." },
+      { property: "og:description", content: "A three-day gathering for young adults in Raleigh, NC. October 16–18, 2026." },
+      { name: "twitter:description", content: "A three-day gathering for young adults in Raleigh, NC. October 16–18, 2026." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a138e950-4e6c-4347-a61e-4ff45ae21ac8/id-preview-200b1236--a06a7226-8177-4180-a4ec-5278ec2e006d.lovable.app-1780496828385.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a138e950-4e6c-4347-a61e-4ff45ae21ac8/id-preview-200b1236--a06a7226-8177-4180-a4ec-5278ec2e006d.lovable.app-1780496828385.png" },
       { name: "twitter:card", content: "summary_large_image" },
