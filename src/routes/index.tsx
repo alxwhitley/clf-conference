@@ -78,7 +78,7 @@ function Home() {
             </div>
             <div>
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl text-dark">
-                A JOURNEY BACK TO WHO YOU WERE MADE TO BE.
+                A journey back to who you were made to be.
               </h2>
               <p className="mt-6 max-w-2xl text-base md:text-lg text-dark/70 leading-relaxed">
                 The weekend is structured around four essential stages of the formation process.
